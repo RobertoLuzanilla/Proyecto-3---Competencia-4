@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Principal {
+public class Main {
 
     public static void main(String[] args) {
         
@@ -8,7 +8,7 @@ public class Principal {
         
         int opcion = 0, Numero;
 
-        Oper_Arboles Raiz = new Oper_Arboles();
+        Oper_Arboles OA = new Oper_Arboles();
         
         do {
             System.out.println(
@@ -38,59 +38,59 @@ public class Principal {
                     case 1:
                         System.out.println("Ingrese un numero para insertar al arbol");
                         Numero = Integer.parseInt(sc.nextLine());
-                        Raiz.Insertar(Raiz.raiz, Numero);
+                        OA.Insertar(OA.raiz, Numero);
                         System.out.println("Se ha insertado el numero " + Numero);
                         break;
 
                     case 2:
-                        if (Raiz.raiz != null) {
+                        if (OA.raiz != null) {
                             System.out.println("\nRecorrido PREORDEN:");
-                            Raiz.PREORDEN(Raiz.raiz);
+                            OA.PREORDEN(OA.raiz);
 
                         } else
                             System.out.println("El arbol no tiene elementos");
                         break;
 
                     case 3:
-                        if (Raiz.raiz != null) {
+                        if (OA.raiz != null) {
                             System.out.println("Recorrido INORDEN");
-                            Raiz.INORDEN(Raiz.raiz);
+                            OA.INORDEN(OA.raiz);
                         } else
                             System.out.println("El arbol no tiene elementos");
                         break;
 
                     case 4:
-                        if (Raiz.raiz != null) {
+                        if (OA.raiz != null) {
                             System.out.println("Recorrido en POSORDEN");
-                            Raiz.POSORDEN(Raiz.raiz);
+                            OA.POSORDEN(OA.raiz);
                         } else
                             System.out.println("El arbol no tiene elementos");
                         break;
 
                     case 5:
-                        System.out.println("El tamaño del arbol es: " + Raiz.TamañoArbol(Raiz.raiz));
+                        System.out.println("El tamaño del arbol es: " + OA.TamañoArbol(OA.raiz));
                         break;
 
                     case 6:
-                        System.out.println("El arbol contiene " + Raiz.HOJAS(Raiz.raiz) + " HOJAS");
+                        System.out.println("El arbol contiene " + OA.HOJAS(OA.raiz) + " HOJAS");
                         break;
 
                     case 7:
                         System.out.println("Ingrese el numero a eliminar");
                         Numero = Integer.parseInt(sc.nextLine());
-                        if (Raiz.raiz != null) {
-                            if (Raiz.EliminarNumero(null, Raiz.raiz, Numero))
+                        if (OA.raiz != null) {
+                            if (OA.EliminarNumero(null, OA.raiz, Numero))
                                 System.out.println("Se ha eliminado el numero" + Numero);
                         } else
                             System.out.println("El arbol no tiene elementos");
                         break;
 
                     case 8:
-                        System.out.println("La altura del arbol es: " + Raiz.AlturaArbol(Raiz.raiz, 1));
+                        System.out.println("La altura del arbol es: " + OA.AlturaArbol(OA.raiz, 1));
                         break;
 
                     case 9:
-                        if (Raiz.EsCompleto())
+                        if (OA.EsCompleto())
                             System.out.println("El arbol si es completo");
                         else
                             System.out.println("El arbol no es completo");
@@ -98,25 +98,25 @@ public class Principal {
 
                     case 10:
 
-                        System.out.println("El arbol contiene " + Raiz.NodosInternos(null, Raiz.raiz) + " Nodos internos");
+                        System.out.println("El arbol contiene " + OA.NodosInternos(null, OA.raiz) + " Nodos internos");
                         break;
 
                     case 11:
 
-                        System.out.println("El arbol contiene " + Raiz.NodosUnHijo(Raiz.raiz) + " Nodos con un hijo");
+                        System.out.println("El arbol contiene " + OA.NodosUnHijo(OA.raiz) + " Nodos con un hijo");
                         break;
                     case 12:
 
-                        System.out.println("El arbol contiene " + Raiz.HijoDerecha(Raiz.raiz) + " Nodos con un hijo en la derecha");
+                        System.out.println("El arbol contiene " + OA.HijoDerecha(OA.raiz) + " Nodos con un hijo en la derecha");
                         break;
                     case 13:
-                        System.out.println("El arbol contiene " + Raiz.DosHijos(Raiz.raiz) + " Nodos con dos hijos");
+                        System.out.println("El arbol contiene " + OA.DosHijos(OA.raiz) + " Nodos con dos hijos");
                         break;
                     case 14:
-                        System.out.println("La suma de los nodos " + Raiz.Suma(Raiz.raiz));
+                        System.out.println("La suma de los nodos " + OA.Suma(OA.raiz));
                         break;
                     case 15:
-                        System.out.println("El arbol contiene " + Raiz.NodsoMultiplo5(Raiz.raiz) + " Nodos cuyos multiplos es 5");
+                        System.out.println("El arbol contiene " + OA.NodsoMultiplo5(OA.raiz) + " Nodos cuyos multiplos es 5");
                         break;
                 }
         } while (opcion != 16);
